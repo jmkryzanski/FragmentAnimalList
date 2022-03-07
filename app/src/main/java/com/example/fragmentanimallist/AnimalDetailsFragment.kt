@@ -62,11 +62,12 @@ class AnimalDetailsFragment : Fragment() {
         //val position = viewModel.position
 
 
-        // With mutablelivedata version
-        var position = 0
-        viewModel.position.observe(requireActivity(), Observer {
-            position = it
-        })
+        // With mutablelivedata version ?: elvis operator to assign 0 in case the value is null
+        val position = viewModel.getPosition() ?: 0
+        // The following can be used for observing values (may be helpful in the future (e.g., your class project))
+        //viewModel.position.observe(requireActivity(), Observer {
+        //    position = it
+        //})
 
 
         // Based on the index of position selected, set the corresponding image

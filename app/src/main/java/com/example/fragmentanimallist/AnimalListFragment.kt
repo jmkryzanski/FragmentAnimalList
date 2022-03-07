@@ -59,8 +59,8 @@ class AnimalListFragment : Fragment() {
             //viewModel.position = position
 
             // With mutablelivedata version
-            viewModel.position.value = position
-
+            viewModel.setPosition(position)
+            //viewModel.position.value = position
 
             if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
                 // We are in portrait orientation
